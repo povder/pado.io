@@ -1,0 +1,70 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: Krzysztof Pado - blog
+email: povder@gmail.com
+description: Krzysztof Pado - personal site.
+domain: povder.github.io
+url: https://povder.github.io/ # the base hostname & protocol for your site
+keywords: ["Programming", "Software", "Scala", "Java", "JVM", "Chris Pado", "Krzysztof Pado"]
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          America/Vancouver
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Krzysztof Pado
+  avatar: kpado.jpeg
+  job: "Software Developer"
+  bio: I'm a software dev currently residing in Greater Vancouver area, Canada. In English-speaking world people call me Chris. <br> <br> Check out my GitHub projects to get to know me by my code.
+  email: povder@gmail.com
+  disqus-shortname: krzysztof-pado
+  twitter: _povder #username
+  facebook: "krzysztof.pado.7" #username
+  google:
+    plus: #username
+    analytics: UA-103140141-2
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: povder #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: krzysztof-pado #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+  telegram: #username
+plugins:
+  - jekyll-redirect-from
