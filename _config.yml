@@ -7,7 +7,7 @@ title: Krzysztof Pado - blog
 email: povder@gmail.com
 description: Krzysztof Pado - personal site.
 domain: pado.io
-url: https://pado.io/ # the base hostname & protocol for your site
+url: https://pado.io # the base hostname & protocol for your site
 keywords: ["Programming", "Software", "Scala", "Java", "JVM", "Chris Pado", "Krzysztof Pado"]
 
 #
