@@ -4,10 +4,10 @@
   {% capture title %}{{ site.title }}{% endcapture %}
 {% endif %}
 
-{% if page.excerpt %}
-  {% capture description %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
+{% if page.description %}
+  {% capture description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
 {% else %}
-  {% capture description %}{{ site.description }}{% endcapture %}
+  {% capture description %}{{ site.excerpt }}{% endcapture %}
 {% endif %}
 
 <head>
