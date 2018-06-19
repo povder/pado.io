@@ -6,8 +6,8 @@
 
 {% if page.description %}
   {% capture description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
-{% else %}
-  {% capture description %}{{ site.excerpt }}{% endcapture %}
+{% else if page.excerpt %}
+  {% capture description %}{{ page.excerpt }}{% endcapture %}
 {% endif %}
 
 <head>
