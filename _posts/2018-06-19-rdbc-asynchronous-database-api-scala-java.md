@@ -60,6 +60,50 @@ I also decided on one non&#8209;goal which is:
     type&#8209;safety but at the same time makes it possible to implement a&nbsp;wider range
     of higher&#8209;level APIs on top of rdbc.
 
+## A basic example
+
+Just to give you a general idea, below are simple code snippets that demonstrate
+the basic usage of the API. The code selects a&nbsp;`name` column from `users`
+table and returns the result as a collection of strings. 
+
+Scala:
+```scala
+import io.rdbc.sapi.ConnectionFactory
+
+val db: ConnectionFactory = /*...*/
+
+val names: Future[Vector[String]] = db.withConnection { conn =>
+  conn.statement("select name from users where age = :age")
+      .bind("age" -> 30)
+      .executeForSet() // Future[ResultSet]
+      .map { resultSet =>
+         resultSet.map(row => row.str("name").toVector
+       }
+}
+```
+
+Java:
+
+```java
+import io.rdbc.japi.ConnectionFactory;
+
+ConnectionFactory db = /*...*/
+
+CompletionStage<List<String>> names = db.withConnection(conn ->
+    conn.statement("select name from users where age = :age")
+        .arg("age", 30)
+        .bind()
+        .executeForSet() // CompletionStage<ResultSet>
+        .thenApply(resultSet ->
+            resultSet.getRows()
+                     .stream()
+                     .map(row -> row.getStr("name"))
+                     .collect(Collectors.toList())
+        )
+);
+```
+
+
 ## API highlights
 
 There are a&nbsp;couple of things I&nbsp;particularly like about the API. I&nbsp;described them below.
@@ -141,7 +185,8 @@ public CompletionStage<Result> stream() {
 
 The API features a&nbsp;[string interpolator](http://docs.api.rdbc.io/scala/statements/#string-interpolator)
 for Scala that allows to easily build the  SQL statements without sacrificing
-safety against the SQL injection attacks. Statements can be created like this:
+safety against the SQL injection attacks. Statements can be created like this 
+(note the `sql` prefix before the SQL statement):
 
 ```scala
 import io.rdbc.sapi.SqlInterpolator._
