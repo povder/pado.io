@@ -125,6 +125,7 @@ import akka.stream.scaladsl.{Sink, Source}
 import org.reactivestreams.Publisher
 import io.rdbc.sapi.SqlInterpolator._
 import io.rdbc.sapi.ConnectionFactory
+import io.rdbc.sapi.Row
 
 /*...*/
 
@@ -132,7 +133,7 @@ val db: ConnectionFactory = /*...*/
 
 def stream = Action.async { _ =>
   db.connection().map { conn =>
-    val pub: Publisher = conn
+    val pub: Publisher[Row] = conn
       .statement(sql"SELECT i, t, v FROM rdbc_demo ORDER BY i, t, v")
       .stream()
 
@@ -154,7 +155,7 @@ import akka.stream.javadsl.Source;
 import akka.util.ByteString;
 import org.reactivestreams.Publisher;
 import io.rdbc.japi.ConnectionFactory;
-import io.rdbc.japi.RowPublisher;
+import io.rdbc.japi.Row;
 
 /*...*/
 
@@ -162,7 +163,7 @@ private final ConnectionFactory db = /*...*/
 
 public CompletionStage<Result> stream() {
     return db.getConnection().thenApply(conn -> {
-        Publisher pub = conn.statement("SELECT i, t, v FROM rdbc_demo ORDER BY i, t, v")
+        Publisher<Row> pub = conn.statement("SELECT i, t, v FROM rdbc_demo ORDER BY i, t, v")
                 .noArgs().stream();
 
         Source<ByteString, NotUsed> recordSource = Source.fromPublisher(pub)
