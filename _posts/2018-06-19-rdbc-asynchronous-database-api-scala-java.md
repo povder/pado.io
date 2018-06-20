@@ -124,8 +124,7 @@ Scala:
 import akka.stream.scaladsl.{Sink, Source}
 import org.reactivestreams.Publisher
 import io.rdbc.sapi.SqlInterpolator._
-import io.rdbc.sapi.ConnectionFactory
-import io.rdbc.sapi.Row
+import io.rdbc.sapi.{ConnectionFactory, Row}
 
 /*...*/
 
