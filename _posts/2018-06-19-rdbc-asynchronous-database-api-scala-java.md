@@ -68,9 +68,7 @@ table and returns the result as a collection of strings.
 
 Scala:
 ```scala
-import io.rdbc.sapi.ConnectionFactory
-
-val db: ConnectionFactory = /*...*/
+val db: io.rdbc.sapi.ConnectionFactory = /*...*/
 
 val names: Future[Vector[String]] = db.withConnection { conn =>
   conn.statement("select name from users where age = :age")
@@ -85,9 +83,7 @@ val names: Future[Vector[String]] = db.withConnection { conn =>
 Java:
 
 ```java
-import io.rdbc.japi.ConnectionFactory;
-
-ConnectionFactory db = /*...*/
+io.rdbc.japi.ConnectionFactory db = /*...*/
 
 CompletionStage<List<String>> names = db.withConnection(conn ->
     conn.statement("select name from users where age = :age")
