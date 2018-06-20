@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Introducing rdbc: asynchronous database access API for Scala and Java"
-excerpt: "An introduction to the new asynchronous Scala and Java relational database access API and its PostgreSQL driver with simple Akka Streams and Play Framework integration examples. Community feedback is greatly appreciated!"
-description: "An introduction to the new asynchronous Scala and Java relational database access API and its PostgreSQL driver with simple Akka Streams and Play Framework integration examples."
+excerpt: "An introduction to the new asynchronous Scala and Java relational database access API and its Netty-based PostgreSQL driver with simple Akka Streams and Play Framework integration examples. Community feedback is greatly appreciated!"
+description: "An introduction to the new asynchronous Scala and Java relational database access API and its Netty-based PostgreSQL driver with simple Akka Streams and Play Framework integration examples."
 categories:
 comments: true
 last_updated:
