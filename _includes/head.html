@@ -5,7 +5,7 @@
 {% endif %}
 
 {% if page.description %}
-  {% capture description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
+  {% capture description %}{{ page.description | strip_html | strip_newlines }}{% endcapture %}
 {% else if page.excerpt %}
   {% capture description %}{{ page.excerpt }}{% endcapture %}
 {% endif %}
