@@ -75,7 +75,7 @@ val names: Future[Vector[String]] = db.withConnection { conn =>
       .bind("age" -> 30)
       .executeForSet() // Future[ResultSet]
       .map { resultSet =>
-         resultSet.map(row => row.str("name").toVector
+         resultSet.map(row => row.str("name")).toVector
       }
 }
 ```
