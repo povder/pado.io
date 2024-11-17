@@ -3,11 +3,11 @@
 # Site wide configuration
 ####################################
 #
-title: Krzysztof Pado - blog
+title: Chris Pado - blog
 email: povder@gmail.com
-description: Krzysztof Pado - personal site.
-domain: pado.io
-url: https://pado.io # the base hostname & protocol for your site
+description: Chris Pado - personal site.
+domain: chrispado.com
+url: https://chrispado.com # the base hostname & protocol for your site
 keywords: ["Programming", "Software", "Scala", "Java", "JVM", "Chris Pado", "Krzysztof Pado"]
 
 #
